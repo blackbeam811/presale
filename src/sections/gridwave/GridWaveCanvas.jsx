@@ -26,7 +26,7 @@ function CameraControls() {
       ref={controlRef}
       args={[camera, domElement]}
       autoRotate={90}
-      autoRotateSpeed={1}
+      autoRotateSpeed={0.2}
     />
   );
 }
@@ -61,7 +61,7 @@ function Points() {
   }, [count, sep, graph]);
 
   useFrame(() => {
-    t += 15;
+    t += 5;
     const positions = bufferRef.current.array;
 
     let i = 0;
@@ -94,7 +94,7 @@ function Points() {
         size={0.25}
         sizeAttenuation
         transparent={false}
-        alphaTest={0.5}
+        alphaTest={0.1}
         opacity={1.0}
       />
     </points>
